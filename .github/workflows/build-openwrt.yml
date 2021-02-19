@@ -69,7 +69,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd openwrt && cd package && git clone https://github.com/kenzok8/openwrt-packages.git && git clone https://github.com/kenzok8/small.git && cd .. && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
